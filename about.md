@@ -17,11 +17,11 @@ what is **Regular Flolloping**?
 
 * powered by [Hakyll](https://jaspervdj.be/hakyll/)
 * running on [Digital Ocean](https://www.digitalocean.com/)
-* sourced from [GitHub](https://github.com)
+* sourced from [GitHub](https://github.com/techieAgnostic/rf)
 * probably badly written
 
 # pretensiously
-**Regular Flolloping** is **Layer 03** of the [Protocol Seven System](https://p7.co.nz)
+**Regular Flolloping** is **Layer 03** of the [Protocol Seven System](https://p7.co.nz) (currently broken)
 
 **Layer 03**, also known as **Psyche**
 
