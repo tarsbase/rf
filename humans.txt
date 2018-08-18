@@ -1,0 +1,10 @@
+==
+= humans.txt for regularflolloping.com
+==
+
+my name is shaun and i am a human
+i usually go by either tA, techieAgnostic, or some name of the form t*A*
+my email is s@p7.co.nz and it is functioning at least 30% of the time
+i made this site with help from the people who made hakyll
+
+i hope we can be friends
