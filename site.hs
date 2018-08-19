@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 import Hakyll
-import Data.Monoid (mappend)
+import Data.Monoid ((<>))
 import Data.List (sortBy,isSuffixOf)
 import System.FilePath.Posix (takeBaseName,takeDirectory,(</>))
 import GHC.IO.Encoding
@@ -14,10 +14,6 @@ main = do
          route idRoute
          compile copyFileCompiler
 
-      match "images/*" $ do
-         route   idRoute
-         compile copyFileCompiler
-
       match "css/*" $ do
          route   idRoute
          compile compressCssCompiler
@@ -25,23 +21,22 @@ main = do
       match (fromList ["about.md", "contact.md"]) $ do
          route $ cleanRoute
          compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= loadAndApplyTemplate "templates/default.html" ctx
             >>= relativizeUrls
             >>= cleanIndexUrls
 
       match "archive.md" $ do
          route $ cleanRoute
          compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/archive.html" defaultContext
+            >>= loadAndApplyTemplate "templates/archive.html" ctx
             >>= relativizeUrls
             >>= cleanIndexUrls
 
          compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let archiveCtx =
-                  listField "posts" postCtx (return posts) `mappend`
-                  constField "title" "Archives"            `mappend`
-                  defaultContext
+                  listField "posts" postCtx (return posts) <>
+                  ctx
             pandocCompiler
                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
@@ -57,18 +52,13 @@ main = do
             >>= cleanIndexUrls
             >>= cleanIndexHtmls
 
-      create ["archive/index.html"] $ do
-         route idRoute
-
       match "index.html" $ do
          route idRoute
          compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
-                  listField "posts" postCtx (return posts) `mappend`
-                  constField "title" "Home"                `mappend`
+                  listField "posts" postCtx (return posts) <>
                   defaultContext
-
             getResourceBody
                >>= applyAsTemplate indexCtx
                >>= loadAndApplyTemplate "templates/default.html" indexCtx
@@ -78,10 +68,12 @@ main = do
 
       match "templates/*" $ compile templateBodyCompiler
 
+ctx :: Context String
+ctx = defaultContext
+
 postCtx :: Context String
 postCtx =
-   dateField "date" "%B %e, %Y" `mappend`
-   defaultContext
+   (dateField "date" "%B %e, %Y") <> ctx
 
 cleanRoute :: Routes
 cleanRoute = customRoute createIndexRoute

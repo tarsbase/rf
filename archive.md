@@ -1,3 +1,7 @@
+---
+title: Archives
+---
+
 you access archives and find:
 
 * An [SSL Endorsement](https://netrunnerdb.com/en/card/21038)
