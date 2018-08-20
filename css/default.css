@@ -7,6 +7,12 @@ body {
   color: #000;
 }
 
+blockquote {
+   padding: 0 1em;
+   color: #444444;
+   border-left: 0.25em solid #dfe2e5;
+}
+
 header {
   border-bottom: 0.2rem solid #000;
 }

@@ -7,3 +7,7 @@
 ## 0.1.0.1 -- 2018-08-19
 
 * Cleaned up the code a bit
+
+## 0.1.1.1 -- 2018-08-20
+
+* Added CSS for Blockquotes
