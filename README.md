@@ -26,20 +26,20 @@ nix-shell --attr env rf.nix
 Compile the generator
 
 ```
-cabal build
-```
+nix-build rf.nix
+```  
 
 Generate the site
 
 ```
-cabal run site clean
-cabal run site build
+./result/site clean
+./result/site build
 ```
 
 And test it out
 
 ```
-cabal run site watch
+./result/site watch
 ```
 
 The site will now be avaliable at `localhost:8000`
