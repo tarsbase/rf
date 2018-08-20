@@ -1,6 +1,6 @@
 # Regular Flolloping
 
-tA's Blog
+tA's Blog, currently hosted at [Regular Flolloping](https://regularflolloping.com)
 
 ## Getting Started
 
@@ -64,7 +64,7 @@ Is very airy fairy and mainly based on what I think constitutes major / minor up
 
 ## License
 
-This project is licensed under the BSD3 License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the BSD3 License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
