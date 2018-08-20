@@ -1,6 +1,6 @@
 # Regular Flolloping
 
-tA's Blog
+tA's Blog, currently hosted at [Regular Flolloping](https://regularflolloping.com)
 
 ## Getting Started
 
