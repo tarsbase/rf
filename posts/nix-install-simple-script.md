@@ -105,7 +105,7 @@ stdenv.mkDerivation rec {
 
 the things that may be new here are the `stdenv.lib.licenses.bsd3` bit, which is simply a variable defined as part of `stdenv` we can reference, and the square bracket notation, which creates a set (although this one only has one item in it).
 
-there is also the double quote notation `\'\'`, which is just a multi line string.
+there is also the double quote notation `''`, which is just a multi line string.
 
 now we're on to the meat and potatoes.
 
@@ -129,8 +129,7 @@ stdenv.mkDerivation rec {
    meta = {
       description = "Display the current swatch beats";
       longDescription = ''
-         Prints out the current Swatch Internet Time.
-         Has the option for a short version.
+         d i s p l a y   t h e   c u r r e n t   s w a t c h   b e a t s
       '';
       homepage = https://github.com/techieAgnostic/swatch/;
       license = stdenv.lib.licenses.bsd3;
@@ -189,8 +188,7 @@ stdenv.mkDerivation rec {
    meta = {
       description = "Display the current swatch beats";
       longDescription = ''
-         Prints out the current Swatch Internet Time.
-         Has the option for a short version.
+         d i s p l a y   t h e   c u r r e n t   s w a t c h   b e a t s
       '';
       homepage = https://github.com/techieAgnostic/swatch/;
       license = stdenv.lib.licenses.bsd3;
