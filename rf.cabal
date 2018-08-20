@@ -20,7 +20,7 @@ executable site
   main-is:             site.hs
   -- other-modules:       
   -- other-extensions:    
-  build-depends:       base >=4.10 && <4.11
+  build-depends:       base
                      , hakyll
                      , filepath
   -- hs-source-dirs:      
