@@ -1,15 +1,17 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-import Hakyll
 import Data.Monoid ((<>))
 import Data.List (sortBy,isSuffixOf)
-import System.FilePath.Posix (takeBaseName,takeDirectory,(</>))
 import GHC.IO.Encoding
+import Hakyll
+import Hakyll.Favicon (faviconsRules, faviconsField)
+import System.FilePath.Posix (takeBaseName,takeDirectory,(</>))
 
 main :: IO ()
 main = do 
    setLocaleEncoding utf8
    hakyll $ do
+      faviconsRules "icons/favicon.svg"
       match "humans.txt" $ do
          route idRoute
          compile copyFileCompiler
@@ -57,8 +59,7 @@ main = do
          compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
-                  listField "posts" postCtx (return posts) <>
-                  defaultContext
+                  listField "posts" postCtx (return posts) <> ctx
             getResourceBody
                >>= applyAsTemplate indexCtx
                >>= loadAndApplyTemplate "templates/default.html" indexCtx
@@ -69,7 +70,8 @@ main = do
       match "templates/*" $ compile templateBodyCompiler
 
 ctx :: Context String
-ctx = defaultContext
+ctx = defaultContext <>
+      faviconsField
 
 postCtx :: Context String
 postCtx =
