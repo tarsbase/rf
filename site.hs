@@ -49,6 +49,7 @@ main = do
          route $ cleanRoute
          compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
             >>= cleanIndexUrls
@@ -68,6 +69,24 @@ main = do
                >>= cleanIndexHtmls
 
       match "templates/*" $ compile templateBodyCompiler
+
+      create ["atom.xml"] $ do
+         route idRoute
+         compile $ do
+            let feedCtx = postCtx <>
+                          bodyField "description"
+            posts <- fmap (take 10) . recentFirst
+               =<< loadAllSnapshots "posts/*" "content"
+            renderAtom feedConfig feedCtx posts
+
+      create ["rss.xml"] $ do
+         route idRoute
+         compile $ do
+            let feedCtx = postCtx <>
+                          bodyField "description"
+            posts <- fmap (take 10) . recentFirst
+               =<< loadAllSnapshots "posts/*" "content"
+            renderRss feedConfig feedCtx posts
 
 ctx :: Context String
 ctx = defaultContext <>
@@ -98,3 +117,12 @@ cleanIndex url
     | idx `isSuffixOf` url = take (length url - length idx) url
     | otherwise            = url
    where idx = "index.html"
+
+feedConfig :: FeedConfiguration
+feedConfig = FeedConfiguration {
+      feedTitle = "Regular Flolloping"
+   ,  feedDescription = "tA's Blog"
+   ,  feedAuthorName = "Shaun Kerr"
+   ,  feedAuthorEmail = "s@p7.co.nz"
+   ,  feedRoot = "https://regularflolloping.com"
+   }
