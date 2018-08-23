@@ -68,7 +68,7 @@ This project is licensed under the BSD3 License - see the [LICENSE](LICENSE) fil
 
 ## Acknowledgments
 
-* Hakyll for having an incredible default, of which 90% was kept
+* Hakyll for having an incredible default, of which ~~90% was kept~~ i gutted for a crappy light on dark style
 * Elie Génard for their favicon library, very easy to use.
 * Douglas Adam's for providing the name
 * You, for reading this :)
