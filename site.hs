@@ -12,7 +12,8 @@ main = do
    setLocaleEncoding utf8
    hakyll $ do
       faviconsRules "icons/favicon.svg"
-      match "humans.txt" $ do
+
+      match (fromList ["humans.txt", "robots.txt"]) $ do
          route idRoute
          compile copyFileCompiler
 
