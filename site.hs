@@ -20,6 +20,10 @@ main = do
          route   idRoute
          compile compressCssCompiler
 
+      match "fonts/*" $ do
+         route idRoute
+         compile copyFileCompiler
+
       match (fromList ["about.md", "contact.md"]) $ do
          route $ cleanRoute
          compile $ pandocCompiler
