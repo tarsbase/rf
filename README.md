@@ -8,12 +8,11 @@ What you need to get the generator up and running.
 
 ### Prerequisites
 
-Assumes you have Cabal and Nix.  
+Built using Nix.
 Nix can be installed with:  
 ```
 curl https://nixos.org/nix/install | sh
 ```  
-And Cabal can be installed with your package manager of choice.
 
 ### Installing
 
@@ -51,6 +50,7 @@ Site will be completely static, so simply point your server to the `_site` direc
 ## Built With
 
 * [Hakyll](https://jaspervdj.be) - The web framework used
+* [hakyll-favicon](https://github.com/elaye/hakyll-favicon) - Thanks Elie!
 * [Nix](https://nixos.org) - Package Management
 * [Cabal](https://cabal.readthedocs.io) - Build System
 
@@ -69,5 +69,6 @@ This project is licensed under the BSD3 License - see the [LICENSE](LICENSE) fil
 ## Acknowledgments
 
 * Hakyll for having an incredible default, of which 90% was kept
+* Elie Génard for their favicon library, very easy to use.
 * Douglas Adam's for providing the name
 * You, for reading this :)
