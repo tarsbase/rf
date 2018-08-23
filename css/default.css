@@ -18,7 +18,8 @@ a:link {
 }
 
 a:visited {
-   color: #B10DC9;
+   #color: #B10DC9;
+   color: #F012BE;
 }
 
 .navbar a {
