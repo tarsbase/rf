@@ -2,6 +2,7 @@
 
 import Data.Monoid ((<>))
 import Data.List (sortBy,isSuffixOf)
+import Data.Typeable
 import GHC.IO.Encoding
 import Hakyll
 import Hakyll.Favicon (faviconsRules, faviconsField)
@@ -9,22 +10,25 @@ import System.FilePath.Posix (takeBaseName,takeDirectory,(</>))
 
 main :: IO ()
 main = do 
+   
+   -- Set the encoding so w3c doesnt complain
    setLocaleEncoding utf8
    hakyll $ do
+
+      -- Generate the favicons
       faviconsRules "icons/favicon.svg"
 
-      match (fromList ["humans.txt", "robots.txt"]) $ do
+      -- Straight copying of files
+      match (fromList ["humans.txt", "robots.txt", "fonts/*"]) $ do
          route idRoute
          compile copyFileCompiler
 
+      -- CSS needs to be compiled and minified
       match "css/*" $ do
          route   idRoute
          compile compressCssCompiler
 
-      match "fonts/*" $ do
-         route idRoute
-         compile copyFileCompiler
-
+      -- Load pages that need to be formatted
       match (fromList ["about.md", "contact.md"]) $ do
          route $ cleanRoute
          compile $ pandocCompiler
@@ -32,6 +36,19 @@ main = do
             >>= relativizeUrls
             >>= cleanIndexUrls
 
+      -- Render Atom + Rss feeds
+      create ["atom.xml"] $ do
+         route idRoute
+         (compileFeed renderAtom)
+
+      create ["rss.xml"] $ do
+         route idRoute
+         (compileFeed renderRss)
+
+      -- Compile the templates
+      match "templates/*" $ compile templateBodyCompiler
+
+      -- Compile the archive page and post list
       match "archive.md" $ do
          route $ cleanRoute
          compile $ pandocCompiler
@@ -50,6 +67,7 @@ main = do
                >>= relativizeUrls
                >>= cleanIndexUrls
 
+      -- Compile posts + save snapshots for the web feeds
       match "posts/*" $ do
          route $ cleanRoute
          compile $ pandocCompiler
@@ -60,6 +78,7 @@ main = do
             >>= cleanIndexUrls
             >>= cleanIndexHtmls
 
+      -- Compile and load posts
       match "index.html" $ do
          route idRoute
          compile $ do
@@ -73,34 +92,43 @@ main = do
                >>= cleanIndexUrls
                >>= cleanIndexHtmls
 
-      match "templates/*" $ compile templateBodyCompiler
+-- Agnememnon the Fuck-Upperer - Conquerer of Small Type Declarations
+compileFeed ::
+   (FeedConfiguration
+      -> Context String
+      -> [Item String]
+      -> Compiler (Item String)
+   ) -> Rules ()
+-- For those left alive, this abstracts out creating
+-- Atom and RSS feeds
+compileFeed f = compile $ do
+   let feedCtx = postCtx <>
+                 bodyField "description"
+   posts <- fmap (take 10) . recentFirst
+      =<< loadAllSnapshots "posts/*" "content"
+   f feedConfig feedCtx posts
 
-      create ["atom.xml"] $ do
-         route idRoute
-         compile $ do
-            let feedCtx = postCtx <>
-                          bodyField "description"
-            posts <- fmap (take 10) . recentFirst
-               =<< loadAllSnapshots "posts/*" "content"
-            renderAtom feedConfig feedCtx posts
+-- The configuration for our Atom/RSS feeds
+feedConfig :: FeedConfiguration
+feedConfig = FeedConfiguration {
+      feedTitle = "Regular Flolloping"
+   ,  feedDescription = "tA's Blog"
+   ,  feedAuthorName = "Shaun Kerr"
+   ,  feedAuthorEmail = "s@p7.co.nz"
+   ,  feedRoot = "https://regularflolloping.com"
+   }
 
-      create ["rss.xml"] $ do
-         route idRoute
-         compile $ do
-            let feedCtx = postCtx <>
-                          bodyField "description"
-            posts <- fmap (take 10) . recentFirst
-               =<< loadAllSnapshots "posts/*" "content"
-            renderRss feedConfig feedCtx posts
-
+-- Our default context for pages
 ctx :: Context String
 ctx = defaultContext <>
       faviconsField
 
+-- Default context for posts
 postCtx :: Context String
 postCtx =
    (dateField "date" "%B %e, %Y") <> ctx
 
+-- Functions to convert pages to /name/index.html
 cleanRoute :: Routes
 cleanRoute = customRoute createIndexRoute
    where
@@ -122,12 +150,3 @@ cleanIndex url
     | idx `isSuffixOf` url = take (length url - length idx) url
     | otherwise            = url
    where idx = "index.html"
-
-feedConfig :: FeedConfiguration
-feedConfig = FeedConfiguration {
-      feedTitle = "Regular Flolloping"
-   ,  feedDescription = "tA's Blog"
-   ,  feedAuthorName = "Shaun Kerr"
-   ,  feedAuthorEmail = "s@p7.co.nz"
-   ,  feedRoot = "https://regularflolloping.com"
-   }

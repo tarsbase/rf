@@ -15,3 +15,7 @@
 ## 0.1.2.0 -- 2018-08-23
 
 * oh fuark i forgot to change the version. added robots.txt, favicons
+
+## 0.1.2.1 -- 2018-08-25
+
+* cleaned up and commented. you happy now?
