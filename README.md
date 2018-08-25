@@ -14,6 +14,10 @@ Nix can be installed with:
 curl https://nixos.org/nix/install | sh
 ```  
 
+### Dependencies
+
+`imagemagick` is required for the favicons.
+
 ### Installing
 
 Enter the build environment

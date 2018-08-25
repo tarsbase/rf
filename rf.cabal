@@ -25,4 +25,5 @@ executable site
                      , filepath
                      , hakyll-favicon
   -- hs-source-dirs:      
+  extra-libraries:     imagemagick
   default-language:    Haskell2010
