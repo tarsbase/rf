@@ -1,6 +1,6 @@
 ---
 title: An Idiot's Guide to Lambda Calculus
-published: TBD
+published: 2018-08-27
 ---
 
 clarification: this is not a guide to lambda calculus for idiots, this is a guide to lambda calculus written by an idiot.
@@ -21,7 +21,7 @@ what you would need is....
 
 ## a way to describe computability
 
-and one way of doing that is with lambda calculus. to define lambda calculus we need just a few rules - variables, abstraction, application, reduction.
+and one way of doing that is with lambda calculus. to define lambda calculus we need just a few rules - variables, abstraction, application.
 
 these concepts aren't too difficult, so awayyyy we go.
 
@@ -81,4 +81,50 @@ the identity function has `x` as its argument, so we take the application body, 
 
 so our abstraction body is `x`, and `x` is equal to our argument `y`, so therefore our function will return `y`, which is the identity.
 
-a sligtly more interesting example is something like
+a sligtly more interesting example is something like:
+
+```
+( (λx.xx) y )
+```
+
+here, our argument to our abstraction is `y`, which gets bound to `x` in the abstraction body, which is then fed into the `xx` to produce:
+
+`yy`
+
+and thats how we go.
+
+as a spoiler for what the next lambda calc post will cover, heres a bit of an example, imagine we were using the same abstraction:
+
+```
+(λx.xx)
+```
+
+and instead of passing it `y`, we passed it **another abstraction**... say, itself?
+
+```
+( (λx.xx) (λx.xx) )
+```
+
+here, we bind the entire abstraction `(λx.xx)` to the variable `x` in the first abstraction.
+
+when we do the substitution into the body `xx` we get left with...
+
+```
+( (λx.xx) (λx.xx) )
+```
+
+the same thing, which means this is an ***infinite loop***
+
+fun stuff fun stuff imo
+
+## further thoughts
+
+theres a lot more to go before we get to a numbering system, and at this point it may seem like theres not much use to lambda calculus, but i am not joking when i say ***anything that can be done on a computer can be written in lambda calculus***.
+
+it may be abstracted, it may be thousands of millions of pages long, but it is possible.
+
+and thats what makes it so wonderful.
+
+i'll write more in depth on this at some point in the near future when i'm feeling smarter, less lazy, and don't wanna write edgy armchair psych pieces instead.
+
+peace out ny'all, if you're unlucky i'll talk about Nock after this.
