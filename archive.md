@@ -10,4 +10,6 @@ you access archives and find:
 
 and make me very sad.
 
+> full disclosure, the only reason this page still exists is because of the netrunner joke. im pretty sure the front page shows every post anyway.
+
 you also find all of this junk:
