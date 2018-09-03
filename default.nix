@@ -8,7 +8,7 @@ mkDerivation {
   isLibrary = false;
   isExecutable = true;
   executableHaskellDepends = [ base binary filepath hakyll hakyll-favicon ];
-  librarySystemDepends = [ imagemagick ];
+  #executableSystemDepends = [ imagemagick ];
   homepage = "regularflolloping.com";
   description = "tA's blog";
   license = stdenv.lib.licenses.bsd3;
