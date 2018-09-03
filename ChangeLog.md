@@ -19,3 +19,11 @@
 ## 0.1.2.1 -- 2018-08-25
 
 * cleaned up and commented. you happy now?
+
+## 0.1.3.0 -- 2018-09-04
+
+* fixed up monad stuff to make recent page actually recent
+
+## 0.1.3.1 -- 2018-09-04
+
+* cleaned up templating a little
