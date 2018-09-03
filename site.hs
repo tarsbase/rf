@@ -67,6 +67,27 @@ main = do
                >>= relativizeUrls
                >>= cleanIndexUrls
 
+      -- Compile and load posts
+      match "index.md" $ do
+         route $ setExtension "html"
+         compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/index.html" ctx
+            >>= relativizeUrls
+            >>= cleanIndexUrls
+
+         compile $ do
+            posts <- (return . (take 5))
+                     =<< recentFirst
+                     =<< loadAll "posts/*"
+            let indexCtx =
+                  listField "posts" postCtx (return posts) <> ctx
+            pandocCompiler
+               >>= applyAsTemplate indexCtx
+               >>= loadAndApplyTemplate "templates/index.html" indexCtx
+               >>= loadAndApplyTemplate "templates/default.html" indexCtx
+               >>= relativizeUrls
+               >>= cleanIndexUrls
+
       -- Compile posts + save snapshots for the web feeds
       match "posts/*" $ do
          route $ cleanRoute
@@ -77,22 +98,6 @@ main = do
             >>= relativizeUrls
             >>= cleanIndexUrls
             >>= cleanIndexHtmls
-
-      -- Compile and load posts
-      match "index.html" $ do
-         route idRoute
-         compile $ do
-            posts <- (return . (take 5))
-                     =<< recentFirst
-                     =<< loadAll "posts/*"
-            let indexCtx =
-                  listField "posts" postCtx (return posts) <> ctx
-            getResourceBody
-               >>= applyAsTemplate indexCtx
-               >>= loadAndApplyTemplate "templates/default.html" indexCtx
-               >>= relativizeUrls
-               >>= cleanIndexUrls
-               >>= cleanIndexHtmls
 
 -- Agnememnon the Fuck-Upperer - Conquerer of Small Type Declarations
 compileFeed ::
