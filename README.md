@@ -20,23 +20,22 @@ curl https://nixos.org/nix/install | sh
 
 ### Installing
 
-Enter the build environment
-
-```
-nix-shell --attr env rf.nix
-```
-
 Compile the generator
 
 ```
 nix-build rf.nix
 ```  
 
+Enter the build environment
+
+```
+nix-shell --pure rf.nix
+```
+
 Generate the site
 
 ```
-./result/site clean
-./result/site build
+./result/site rebuild
 ```
 
 And test it out
