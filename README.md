@@ -29,7 +29,7 @@ nix-build rf.nix
 Enter the build environment
 
 ```
-nix-shell --pure rf.nix
+nix-shell --pure
 ```
 
 Generate the site
