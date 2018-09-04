@@ -10,7 +10,7 @@ you access archives and find:
 
 and make me very sad.
 
-> ~full disclosure, the only reason this page still exists is because of the netrunner joke. im pretty sure the front page shows every post anyway.~
+> ~~full disclosure, the only reason this page still exists is because of the netrunner joke. im pretty sure the front page shows every post anyway.~~
 
 > turns out im not quite as stupid as i thought and worked out how monads work so i could limit front page to a few posts. this page is back in business baby!
 

@@ -1,10 +1,9 @@
 let
-   inherit (import <nixpkgs> {}) fetchFromGitHub;
-   np = fetchFromGitHub {
-     owner = "NixOS";
-     repo = "nixpkgs";
-     rev = "d7c0d9a7f83b7f80e08888c040ea8a2ab7ca5f71";
-     sha256 = "0vb7ikjscrp2rw0dfw6pilxqpjm50l5qg2x2mn1vfh93dkl2aan7";
+   
+   rev = "d7c0d9a7f83b7f80e08888c040ea8a2ab7ca5f71";
+   np = builtins.fetchTarball {
+     url = https://github.com/nixos/nixpkgs/archive/$rev.tar.gz;
+     sha256 = "1i5a0si7m80w1a987crm9xmbin35jpmdcsk3113xxp9xcw0v23rn";
    };
    config = {
       packageOverrides = pkgs: rec {
