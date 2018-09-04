@@ -20,6 +20,7 @@ what is **Regular Flolloping**?
 * sourced from [GitHub](https://github.com/techieAgnostic/rf)
 * avaliable on Atom/Rss feeds [here](/atom.xml) and [here](/rss.xml) respectively
 * probably badly written
+* follows the [humans.txt](http://humanstxt.org/) intiative: see it [here](/humans.txt)
 
 # pretensiously
 **Regular Flolloping** is **Layer 03** of the [Protocol Seven System](https://p7.co.nz) (currently broken)
