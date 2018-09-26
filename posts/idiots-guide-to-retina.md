@@ -57,37 +57,37 @@ This card cycles together with your discard piles. When it leaves your discard p
 
 ***Thumping***
 
-+0 Range, +0 Power, +1 Priority
++0 Range, +0 Power, +0 Priority
 
-**Reveal, In-Tune**: +1 Power
-**Before Activating, In-Tune**: Move up to 1 space.
+**Reveal, In-Tune**: +1 Power  
+**Before Activating, In-Tune**: Move up to 1 space.  
 
 ***Piercing***
 
 +1 Range, +0 Power, +1 Priority
 
-**Start of Beat, In-Tune**: Push the opponent 1 space.
-**In-Tune**: If the opponent would move more than 1 space, reduce that movement to 1 space.
+**Start of Beat, In-Tune**: Push the opponent 1 space.  
+**In-Tune**: If the opponent would move more than 1 space, reduce that movement to 1 space.  
 
 ***Deep***
 
 +0~1 Range, +0 Power, +0 Priority
 
-**Out-of-Tune**: Stun Immunity
-**In-Tune**: This attack does not stun opponents
+**Out-of-Tune**: Stun Immunity  
+**In-Tune**: This attack does not stun opponents  
 
 ***Reverberating***
 
-+0 Range, -1 Power, +1 Priority
++0 Range, -1 Power, +0 Priority
 
-**Reveal, In-Tune**: +0~1 Range. If the opponent has any positive Power modifiers, +2 Power.
-**End of Beat**: Move up to 2 spaces.
+**Reveal, In-Tune**: +0~1 Range. If the opponent has any positive Power modifiers, +2 Power.  
+**End of Beat**: Move up to 2 spaces.  
 
 ***Booming***
 
 +1~2 Range, -1 Power, -2 Priority
 
-**Start of Beat**: Push the opponent 1 or 2 spaces
+**Start of Beat**: Push the opponent 1 or 2 spaces  
 
 ### Unique Base
 
@@ -95,7 +95,7 @@ This card cycles together with your discard piles. When it leaves your discard p
 
 1~3 Range, 2 Power, 4 Priority
 
-**End of Beat**: Move up to 1 space. you may swap your discard piles
+**End of Beat**: Move up to 1 space. you may swap your discard piles  
 
 ### Finishers
 
@@ -105,10 +105,12 @@ This card cycles together with your discard piles. When it leaves your discard p
 
 > It's been a long build up!
 
-Stun Immunity
+Stun Immunity  
 **Reveal, Out-of-Tune**: Remove your form card from your discard piles, and flip it to its **In-Tune** side.
 
 ***Blow the Speakers!***
+
+1~2 Range, 7 Power, 6 Priority
 
 > Totally worth it!
 
