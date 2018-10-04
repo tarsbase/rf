@@ -1,6 +1,6 @@
 ---
 title: No OwO Zone
-published: 2018-11-04
+published: 2018-10-04
 ---
 
 > rawr means "i wuv u" in dinorawr
