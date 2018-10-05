@@ -3,7 +3,7 @@ title: Everyday Life
 published: 2018-10-05
 ---
 
-shout-outs to [@ibagail](https://cybre.space/@ibagail) and [@grace](https://social.illegalpornography.com/@BestGirlGrace) for todays topics.
+shout-outs to [ibagail](https://cybre.space/@ibagail) and [grace](https://social.illegalpornography.com/@BestGirlGrace) for todays topics.
 
 ## Nichijou - My Ordinary Life
 
