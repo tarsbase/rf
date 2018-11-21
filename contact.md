@@ -2,7 +2,7 @@
 title: Contact
 ---
 
-* come find me on [mastodon!](https://ilovela.in/web/accounts/1)
+* come find me on <a rel="me" href="https://ilovela.in/@tA">mastodon!</a>
 * email me at [s@p7.co.nz](mailto:s@p7.co.nz)
 * come chill at `#scoots` on [ServerChan](https://p7.co.nz/layer08/) (link broken for now, server is `irc.serverchan.club` port `6698` with SSL)
 * if you see a `tA`, `techieAgnostic` or anything in the form of `t*A*` on irc its probably me
