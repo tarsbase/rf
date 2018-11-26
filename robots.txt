@@ -1,2 +1,5 @@
 User-agent: *
 Disallow:
+
+# robots are our friends.
+# i hope we can be friends :)
