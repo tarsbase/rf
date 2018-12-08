@@ -1,5 +1,4 @@
 let
-   
    rev = "d7c0d9a7f83b7f80e08888c040ea8a2ab7ca5f71";
    np = builtins.fetchTarball {
      url = "https://github.com/nixos/nixpkgs/archive/${rev}.tar.gz";
