@@ -9,7 +9,7 @@ let
          haskellPackages = pkgs.haskellPackages.override {
             overrides = haskellPackagesNew: haskellPackagesOld: rec {
                rf =
-                  haskellPackagesNew.callPackage ./default.nix { };
+                  haskellPackagesNew.callPackage ./cabal.nix { };
             };
          };
       };
@@ -19,4 +19,6 @@ in
    rec {
       inherit pkgs;
       rf = pkgs.haskellPackages.rf;
+      rfBuilt = pkgs.runCommand { buildInputs = [rf]; }
+        "mkdir $out; cd $out; touch TEST; site rebuild";
    }

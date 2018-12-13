@@ -1,6 +1,8 @@
 User-agent: *
 Disallow:
 
+#TESTE TESTE
+
 # robots are our pals
 # a robot helped deploy this blog!
 # i hope we can be friends :)
