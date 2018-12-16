@@ -3,7 +3,7 @@ title: Future Creations
 published: 2018-12-16
 ---
 
-i got asked what some of the projects i wanted to work on were, by a very good friend and fellow chippie [@vala](https://ilovela.in/@vala), so... here we go.
+i got asked what some of the projects i wanted to work on were, by a very good friend and fellow chippie [\@vala](https://ilovela.in/@vala), so... here we go.
 
 ## tabletop ruleset / sourcebook
 
