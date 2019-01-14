@@ -23,7 +23,7 @@ what is **Regular Flolloping**?
 * follows the [humans.txt](http://humanstxt.org/) intiative: see it [here](/humans.txt)
 
 # pretensiously
-**Regular Flolloping** is **Layer 03** of the [Protocol Seven System](https://p7.co.nz) (currently broken)
+**Regular Flolloping** is **Layer 03** of the ***Protocol Seven System***
 
 **Layer 03**, also known as **Psyche**
 
