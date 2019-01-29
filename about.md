@@ -17,7 +17,7 @@ what is **Regular Flolloping**?
 
 * powered by [Hakyll](https://jaspervdj.be/hakyll/)
 * running on [Digital Ocean](https://www.digitalocean.com/)
-* sourced from [GitHub](https://github.com/techieAgnostic/rf)
+* sourced from [lain.church](https://git.lain.church/tA/rf)
 * avaliable on Atom/Rss feeds [here](/atom.xml) and [here](/rss.xml) respectively
 * probably badly written
 * follows the [humans.txt](http://humanstxt.org/) intiative: see it [here](/humans.txt)
