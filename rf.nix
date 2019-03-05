@@ -20,5 +20,5 @@ in
       inherit pkgs;
       rf = pkgs.haskellPackages.rf;
       rfBuilt = pkgs.runCommand { buildInputs = [rf]; }
-        "mkdir $out; cd $out; touch TEST; site rebuild";
+        "mkdir $out; cd $out; site rebuild";
    }

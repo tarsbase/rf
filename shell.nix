@@ -5,5 +5,6 @@ in
     buildInputs = drv.buildInputs ++ [
        stuff.pkgs.imagemagick
        stuff.pkgs.inconsolata  
+       stuff.pkgs.scsh
     ];
   })
